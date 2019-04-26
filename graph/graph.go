@@ -56,3 +56,21 @@ func dfs(airport string, m map[string]*StringHeap, result *[]string)  {
 	}
 	*result = append([]string{airport}, *result...)
 }
+
+// Directed Graph Eulerian Circuit
+type DAG struct {
+	Size int
+	Graph map[int]*[]int
+}
+
+func (this *DAG) Init(edges [][]int)  {
+	for _, edge := range edges {
+		from, to := edge[0], edge[1]
+		l := *this.Graph[from]
+		l = append(l, to)
+	}
+}
+
+func (this *DAG) GetEulerianCircuit() []int {
+	
+}
